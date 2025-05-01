@@ -1,8 +1,6 @@
-
 export const routes = [
-    {
-        path: "/",
-        Component: Team,
-    },
-]
-
+  {
+    path: '/',
+    Component: null,
+  },
+];
