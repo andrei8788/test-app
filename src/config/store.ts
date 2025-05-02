@@ -1,7 +1,6 @@
-import { combineReducers, configureStore, Tuple } from '@reduxjs/toolkit';
+import { combineReducers, configureStore } from '@reduxjs/toolkit';
 
 import rootApi from './http';
-import rtkQueryErrorLogger from './logger';
 
 const rootReducer = combineReducers({
   [rootApi.reducerPath]: rootApi.reducer,
@@ -9,7 +8,7 @@ const rootReducer = combineReducers({
 
 export const store = configureStore({
   reducer: rootReducer,
-  middleware: () => new Tuple(rootApi.middleware, rtkQueryErrorLogger),
+  middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(rootApi.middleware) as never,
 });
 
 export type RootState = ReturnType<typeof rootReducer>;

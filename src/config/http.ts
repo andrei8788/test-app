@@ -1,13 +1,13 @@
-import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query';
+import { BaseQueryFn, createApi, FetchArgs, fetchBaseQuery, FetchBaseQueryError } from '@reduxjs/toolkit/query/react';
 import { stringify as queryStringify } from 'qs';
 
-import { ETagTypes } from '@/enums/tags.enums';
+import { ETagType } from '@/enums/tags.enums';
 
 import env from './env';
 
 const paramsSerializer = (params: Record<string, unknown>): string => queryStringify(params, { arrayFormat: 'repeat' });
 
-const baseQuery = fetchBaseQuery({
+const baseQuery: BaseQueryFn<string | FetchArgs, unknown, FetchBaseQueryError> = fetchBaseQuery({
   baseUrl: env.APP_API + '/',
   paramsSerializer,
 });
@@ -15,6 +15,6 @@ const baseQuery = fetchBaseQuery({
 export default createApi({
   reducerPath: 'api',
   baseQuery,
-  tagTypes: Object.values(ETagTypes),
+  tagTypes: Object.values(ETagType),
   endpoints: () => ({}),
 });

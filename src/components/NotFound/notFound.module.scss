@@ -1,0 +1,16 @@
+.content {
+  height: 100%;
+  flex: 1;
+
+  @include center
+}
+
+.title {
+  font-family: GrtskTera;
+  font-weight: 700;
+  font-size: 10rem;
+
+  @include respond(sm) {
+    font-size: 8rem;
+  }
+}

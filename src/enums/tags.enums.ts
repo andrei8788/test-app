@@ -1,3 +1,3 @@
-export enum ETagTypes {
-    Cocktails = 'Cocktails',
+export enum ETagType {
+  Cocktails = 'Cocktails',
 }

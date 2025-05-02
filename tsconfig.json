@@ -24,9 +24,6 @@
     "strictFunctionTypes": true,
     "noFallthroughCasesInSwitch": true,
     "noUncheckedSideEffectImports": true,
-    "types": [
-      "vitest/globals"
-    ],
     "paths": {
       "@/*": [
         "src/*"

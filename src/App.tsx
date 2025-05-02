@@ -1,4 +1,4 @@
-import './App.css';
+import './styles/globals.scss';
 
 import { FC } from 'react';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
