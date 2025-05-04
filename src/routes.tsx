@@ -3,7 +3,7 @@ import { Navigate } from 'react-router-dom';
 
 import Layout from '@/components/Layout';
 import NotFound from '@/components/NotFound';
-import { ECocktailType } from '@/enums/cocktail.enums';
+import { ECocktailCode } from '@/enums/cocktail.enums';
 import Cocktails from '@/modules/cocktails/pages/Cocktails';
 
 export const routes: RouteObject[] = [
@@ -13,7 +13,7 @@ export const routes: RouteObject[] = [
     children: [
       {
         index: true,
-        element: <Navigate to={`/${ECocktailType.Margarita}`} replace />,
+        element: <Navigate to={`/${ECocktailCode.Margarita}`} replace />,
       },
       {
         path: '/:id',

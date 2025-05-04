@@ -1,13 +1,13 @@
 import { FC } from 'react';
 import { NavLink } from 'react-router-dom';
 
-import { ECocktailType } from '@/enums/cocktail.enums';
+import { ECocktailCode } from '@/enums/cocktail.enums';
 import { capitalizeFirstLetter } from '@/utils/string.utils';
 
 import style from './sidebar.module.scss';
 
 const Sidebar: FC = () => {
-  const cocktailList = Object.values(ECocktailType);
+  const cocktailList = Object.values(ECocktailCode);
 
   return (
     <aside className={style.aside}>

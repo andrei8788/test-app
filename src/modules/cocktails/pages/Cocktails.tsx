@@ -2,18 +2,18 @@ import { FC } from 'react';
 import { Navigate, useParams } from 'react-router-dom';
 
 import Loader from '@/components/Loader';
-import { ECocktailType } from '@/enums/cocktail.enums';
+import { ECocktailCode } from '@/enums/cocktail.enums';
 
 import { useGetCocktailsQuery } from '../cocktails.api';
 import style from './cocktails.module.scss';
 import Cocktail from './components/Cocktail';
 
 const Cocktails: FC = () => {
-  const { id } = useParams<{ id: ECocktailType }>();
+  const { id } = useParams<{ id: ECocktailCode }>();
 
-  const { data, isFetching } = useGetCocktailsQuery({ s: id as ECocktailType }, { skip: !id });
+  const { data, isFetching } = useGetCocktailsQuery({ s: id as ECocktailCode }, { skip: !id });
 
-  if (!id || !Object.values(ECocktailType).includes(id)) {
+  if (!id || !Object.values(ECocktailCode).includes(id)) {
     return <Navigate to="/404" replace />;
   }
 
