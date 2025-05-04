@@ -6,13 +6,15 @@ import { generationOfIngredientProperties } from '../../../coctails.utils';
 import Cocktail from './';
 
 describe('Cocktail', () => {
-  it('renders with given name and age', () => {
+  it('It is displayed with the listed ingredients', () => {
     render(<Cocktail {...cocktailMock} />);
 
-    const properties = generationOfIngredientProperties().filter((item) => Boolean(cocktailMock[item]));
+    const properties = generationOfIngredientProperties()
+      .filter((item) => Boolean(cocktailMock[item as keyof typeof cocktailMock]))
+      .map((item) => cocktailMock[item as keyof typeof cocktailMock] as string);
 
     properties.forEach((item) => {
-      expect(screen.getByText(cocktailMock[item])).toBeInTheDocument();
+      expect(screen.getByText(item)).toBeInTheDocument();
     });
   });
 });
