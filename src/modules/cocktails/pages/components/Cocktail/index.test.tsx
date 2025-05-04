@@ -9,12 +9,10 @@ describe('Cocktail component', () => {
   it('It is displayed with the listed ingredients', () => {
     render(<Cocktail {...cocktailMock} />);
 
-    const properties = generationOfIngredientProperties()
-      .filter((item) => Boolean(cocktailMock[item]))
-      .map((item) => cocktailMock[item]);
+    const properties = generationOfIngredientProperties().filter((item) => Boolean(cocktailMock[item]));
 
     properties.forEach((item) => {
-      expect(screen.getByText(item)).toBeInTheDocument();
+      expect(screen.getByText(cocktailMock[item])).toBeInTheDocument();
     });
   });
 });
