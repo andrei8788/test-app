@@ -35,8 +35,7 @@
   ],
   "exclude": [
     "src/**/*.test.ts",
-    "src/**/*.test.tsx",
-    "node_modules"
+    "src/**/*.test.tsx"
   ],
   "references": [
     {
