@@ -2,7 +2,7 @@ import { FC } from 'react';
 import { NavLink } from 'react-router-dom';
 
 import { ECocktailType } from '@/enums/cocktail.enums';
-import { capitalizeFirstLetter } from '@/utils/string-converters.utils';
+import { capitalizeFirstLetter } from '@/utils/string.utils';
 
 import style from './sidebar.module.scss';
 
@@ -16,7 +16,7 @@ const Sidebar: FC = () => {
           return (
             <li key={item}>
               <NavLink className={(navData) => (navData.isActive ? style.active : '')} to={item}>
-                <p className={style.menuItem}>{capitalizeFirstLetter(item)}</p>
+                {capitalizeFirstLetter(item)}
               </NavLink>
             </li>
           );

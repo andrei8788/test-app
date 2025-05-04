@@ -1,6 +1,7 @@
 import { FC } from 'react';
 
 import { TCocktail } from '../../../cocktails.types';
+import { generationOfIngredientProperties } from '../../../coctails.utils';
 import style from './cocktail.module.scss';
 
 type CocktailProps = TCocktail;
@@ -14,10 +15,10 @@ const Cocktail: FC<CocktailProps> = ({
   strInstructions,
   ...rest
 }) => {
-  const ingredients = Array.from({ length: 15 }, (_, i) => i + 1).map((number) => {
-    const ingredient = rest[`strIngredient${number}` as keyof typeof rest];
+  const ingredients = generationOfIngredientProperties().map((item) => {
+    const ingredient = rest[item as keyof typeof rest];
     return ingredient ? (
-      <li key={number}>
+      <li key={item}>
         <h3 className={style.description}>{ingredient}</h3>
       </li>
     ) : null;

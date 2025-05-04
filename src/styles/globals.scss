@@ -1,5 +1,8 @@
 @forward 'fonts';
 
+* {
+  box-sizing: border-box;
+}
 
 :root {
   font-family: ProximaNovaA, system-ui, Avenir, Helvetica, Arial, sans-serif;
