@@ -5,6 +5,11 @@
   @include center
 }
 
+.wrapper {
+  @include center;
+  flex-direction: column;
+}
+
 .title {
   font-family: GrtskTera;
   font-weight: 700;
@@ -12,5 +17,19 @@
 
   @include respond(sm) {
     font-size: 8rem;
+  }
+}
+
+.subtitle {
+  font-size: 3.8rem;
+  @include respond(sm) {
+    font-size: 2.8rem;
+  }
+}
+
+.smiley {
+  width: 200px;
+  @include respond(sm) {
+    width: 180px;
   }
 }
